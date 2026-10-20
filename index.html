@@ -1,0 +1,785 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Raul Alderete</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Raul Alderete, Cybersecurity Analyst in the San Francisco Bay Area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout (from Raul's sketch): profile header + summary panel with code behind it; two columns below
+   (experience timeline left; education, certs, projects, skills stacked right); full-width achievements band;
+   terminal opens as a drawer for the playful side. */
+:root {
+  --bg: #eef2f6;
+  --surface: #ffffff;
+  --ink: #14202e;
+  --muted: #5a6878;
+  --line: #d3dbe4;
+  --accent: #1f5fd1;
+  --signal: #d4620f;
+  --ok: #1d8a5a;
+  --term-bg: #0f1a27;
+  --term-fg: #d6e2ee;
+  --term-dim: #7f93a8;
+  --term-accent: #6fb1ff;
+  --code-ink: rgba(214, 226, 238, .16);
+  --placeholder: #fff4e6;
+  --placeholder-ink: #8a4a10;
+  --grid: rgba(31, 95, 209, .06);
+  --f-display: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1320; --surface: #121d2c; --ink: #e3ebf4; --muted: #94a5b8;
+    --line: #243347; --accent: #6fa8ff; --signal: #ff9a4d; --ok: #4cc58f;
+    --term-bg: #060c15; --term-fg: #d6e2ee; --term-dim: #7f93a8; --term-accent: #6fb1ff;
+    --code-ink: rgba(214, 226, 238, .13);
+    --placeholder: #2a1d10; --placeholder-ink: #ffc58f; --grid: rgba(111, 168, 255, .05);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1320; --surface: #121d2c; --ink: #e3ebf4; --muted: #94a5b8;
+  --line: #243347; --accent: #6fa8ff; --signal: #ff9a4d; --ok: #4cc58f;
+  --term-bg: #060c15; --term-fg: #d6e2ee; --term-dim: #7f93a8; --term-accent: #6fb1ff;
+  --code-ink: rgba(214, 226, 238, .13);
+  --placeholder: #2a1d10; --placeholder-ink: #ffc58f; --grid: rgba(111, 168, 255, .05);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  background: var(--bg);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--ink);
+  font: 400 16px/1.6 var(--f-body);
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: 1140px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.label { font: 600 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.ph { display: inline-block; font: 600 10.5px/1 var(--f-mono); padding: 4px 6px; border-radius: 4px; background: var(--placeholder); color: var(--placeholder-ink); letter-spacing: .04em; text-transform: uppercase; }
+.tag { display: inline-block; font: 500 11.5px/1 var(--f-mono); padding: 5px 7px; border-radius: 5px; background: var(--grid); color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 8px; font: 600 13px/1 var(--f-mono); text-decoration: none; cursor: pointer; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--surface); }
+.iconbtn { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: 7px 10px; font: 500 13px/1 var(--f-mono); cursor: pointer; white-space: nowrap; text-decoration: none; }
+.iconbtn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* top bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; gap: 12px; padding-block: 10px; }
+.brand { font: 700 17px/1 var(--f-display); color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--accent); }
+.nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { font: 500 13px/1 var(--f-mono); color: var(--muted); text-decoration: none; padding: 8px 10px; border-radius: 6px; white-space: nowrap; }
+.nav a:hover, .nav a.on { color: var(--accent); background: var(--grid); }
+
+/* profile header */
+.profile .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 32px; align-items: stretch; padding-block: 40px 28px; }
+.who { display: flex; flex-direction: column; gap: 14px; }
+.avatar { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); border: 2px solid var(--accent); font: 700 32px/1 var(--f-display); color: var(--accent); overflow: hidden; position: relative; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.who h1 { font-size: clamp(38px, 5.5vw, 58px); font-weight: 700; letter-spacing: -.01em; }
+.who h1 .last { color: var(--accent); }
+.title { font: 600 16px/1.3 var(--f-mono); color: var(--signal); }
+.loc { font-size: 14px; color: var(--muted); }
+.certline { display: flex; flex-wrap: wrap; gap: 6px; }
+.certpill { font: 500 12px/1 var(--f-mono); padding: 6px 9px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); white-space: nowrap; }
+.certpill.prog { border-color: var(--signal); color: var(--signal); }
+.cta { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px; }
+
+.summary { position: relative; overflow: hidden; border-radius: 14px; background: var(--term-bg); color: var(--term-fg); padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; min-height: 300px; box-shadow: 0 24px 48px -28px rgba(10, 20, 40, .6); }
+.codebg { position: absolute; inset: 0; margin: 0; padding: 16px 20px; font: 400 12.5px/1.6 var(--f-mono); color: var(--code-ink); white-space: pre; overflow: hidden; pointer-events: none; user-select: none; }
+.codebg .roll { animation: roll 60s linear infinite; }
+@keyframes roll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+.summary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, var(--term-bg) 78%); pointer-events: none; }
+.summary > *:not(.codebg) { position: relative; z-index: 1; }
+.summary .label { color: var(--term-accent); }
+.summary p { font-size: 16.5px; line-height: 1.65; max-width: 62ch; }
+.summary .prompt { font: 400 13px/1 var(--f-mono); color: var(--term-dim); }
+.summary .prompt b { color: #ffb36b; font-weight: 400; }
+
+/* main two columns */
+.cols .wrap { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 24px; align-items: start; padding-block: 12px 24px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; scroll-margin-top: 70px; }
+.panel-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px; padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--line); }
+.panel-head h2 { font-size: 24px; }
+.panel-head h2 small { display: block; font: 600 12px/1 var(--f-mono); color: var(--signal); margin-bottom: 6px; letter-spacing: .05em; }
+.stack { display: flex; flex-direction: column; gap: 24px; }
+
+/* experience */
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 12px/1 var(--f-mono); padding: 7px 10px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.timeline { display: flex; flex-direction: column; border-left: 2px solid var(--line); margin-left: 6px; }
+.role { position: relative; padding: 0 0 22px 22px; transition: opacity .2s; }
+.role:last-child { padding-bottom: 0; }
+.role::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); }
+.role.dim { opacity: .32; }
+.role h3 { font-size: 18px; }
+.role .meta { font: 400 12.5px/1.5 var(--f-mono); color: var(--muted); margin: 3px 0 8px; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.role .meta b { color: var(--ink); font-weight: 600; }
+.role ul { margin: 0 0 10px; padding-left: 18px; }
+.role li { margin-bottom: 4px; font-size: 15px; }
+.role li::marker { color: var(--signal); }
+.role .more { all: unset; cursor: pointer; font: 500 12px/1 var(--f-mono); color: var(--accent); }
+.role .more:focus-visible { outline: 2px solid var(--signal); }
+
+/* talks */
+.talks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.talk { all: unset; box-sizing: border-box; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; cursor: pointer; background: var(--surface); transition: transform .15s, border-color .15s; }
+.talk:hover { transform: translateY(-2px); border-color: var(--accent); }
+.talk:focus-visible { outline: 2px solid var(--signal); }
+.talk .shot { aspect-ratio: 16 / 9; max-width: 100%; background: var(--grid); overflow: hidden; border-bottom: 1px solid var(--line); position: relative; }
+.talk .shot img { width: 100%; height: 100%; object-fit: cover; }
+.talk .kind { position: absolute; left: 8px; top: 8px; font: 600 10.5px/1 var(--f-mono); padding: 4px 6px; border-radius: 4px; background: var(--term-bg); color: var(--term-fg); letter-spacing: .04em; text-transform: uppercase; }
+.talk .cap { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; }
+.talk b { font-weight: 600; font-size: 14.5px; line-height: 1.3; }
+.talk span.ev { font: 400 12px/1.35 var(--f-mono); color: var(--muted); }
+.slidenav { display: flex; align-items: center; gap: 10px; }
+.slidenav span { font: 400 12.5px/1 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .talks { grid-template-columns: 1fr; } }
+
+/* right column lists */
+.list { display: flex; flex-direction: column; gap: 14px; }
+.item { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; }
+.item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 8px; }
+.item b { display: block; font-weight: 600; font-size: 15px; line-height: 1.35; }
+.item span { font-size: 13px; color: var(--muted); }
+.sub { font: 600 11px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 18px 0 10px; }
+
+.thumbrow { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: center; padding: 8px; margin: 0 -8px; border-radius: 10px; cursor: pointer; }
+.thumbrow:hover { background: var(--grid); }
+.thumbrow:focus-visible { outline: 2px solid var(--signal); }
+.thumb { width: 56px; height: 56px; border-radius: 10px; background: var(--grid); border: 1px solid var(--line); display: grid; place-items: center; font: 700 15px/1 var(--f-display); color: var(--accent); overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumbrow b { display: block; font-weight: 600; font-size: 15px; line-height: 1.3; }
+.thumbrow span { font-size: 13px; color: var(--muted); }
+.st-ok { color: var(--ok); } .st-prog { color: var(--signal); }
+.skillgrp { margin-bottom: 12px; }
+.skillgrp:last-child { margin-bottom: 0; }
+.skillgrp .label { display: block; margin-bottom: 7px; }
+
+.langs { font-size: 14px; color: var(--muted); }
+.chan { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); }
+.chan:hover { border-color: var(--accent); }
+.chan .thumb { width: 44px; height: 44px; font-size: 13px; }
+.chan b { display: block; font: 600 14px/1.3 var(--f-mono); overflow-wrap: anywhere; }
+.chan > span:nth-child(2) { min-width: 0; }
+.chan > span > span { font-size: 13px; color: var(--muted); }
+.chan i { font-style: normal; color: var(--accent); }
+.badge { display: inline-block; font: 600 11px/1 var(--f-mono); padding: 4px 6px; border-radius: 4px; background: var(--grid); color: var(--accent); white-space: nowrap; }
+.lang { font: 600 10.5px/1 var(--f-mono); padding: 3px 5px; border-radius: 4px; border: 1px solid var(--signal); color: var(--signal); margin-left: 6px; vertical-align: 2px; }
+
+/* training gallery */
+.gallery .wrap { padding-block: 0 24px; }
+.gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.gcard { all: unset; box-sizing: border-box; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; cursor: pointer; background: var(--surface); transition: transform .15s, border-color .15s; }
+.gcard:hover { transform: translateY(-2px); border-color: var(--accent); }
+.gcard:focus-visible { outline: 2px solid var(--signal); }
+.gcard .shot { aspect-ratio: 1.414 / 1; max-width: 100%; background: var(--grid); display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--line); font: 700 22px/1 var(--f-display); color: var(--accent); }
+.gcard .shot img { width: 100%; height: 100%; object-fit: cover; }
+.gcard .cap { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; }
+.gcard b { font-weight: 600; font-size: 14px; line-height: 1.3; }
+.gcard span { font: 400 12px/1.3 var(--f-mono); color: var(--muted); }
+.gcard[hidden] { display: none; }
+.fineprint { font-size: 12.5px; color: var(--muted); margin-top: 14px; }
+
+/* achievements */
+.ach .wrap { padding-block: 12px 24px; }
+.ach .panel { scroll-margin-top: 70px; }
+.ach-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.ach-tile { background: var(--surface); padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+.ach-tile a { color: inherit; }
+.ach-tile b { font: 700 32px/1 var(--f-display); color: var(--accent); font-variant-numeric: tabular-nums; }
+.ach-tile strong { font-weight: 600; font-size: 15px; }
+.ach-tile span { font-size: 13.5px; color: var(--muted); }
+
+/* contact */
+.contact .wrap { padding-block: 12px 32px; }
+.contact .panel { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center; }
+.contact h2 { font-size: 26px; margin-bottom: 8px; }
+.contact p { color: var(--muted); }
+.links { display: flex; flex-direction: column; gap: 8px; }
+.linkrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font: 500 14px/1.3 var(--f-mono); min-width: 0; }
+.linkrow > span { overflow-wrap: anywhere; min-width: 0; }
+
+/* terminal drawer */
+.fab { position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 8; background: var(--term-bg); color: var(--term-fg); border: 1px solid var(--term-accent); border-radius: 10px; padding: 11px 14px; font: 600 13px/1 var(--f-mono); cursor: pointer; box-shadow: 0 10px 30px -10px rgba(10, 20, 40, .6); }
+.fab b { color: #ffb36b; font-weight: 600; }
+dialog.term { border: 0; padding: 0; border-radius: 12px; width: min(760px, calc(100vw - 24px)); background: var(--term-bg); color: var(--term-fg); overflow: hidden; }
+dialog::backdrop { background: rgba(8, 14, 24, .6); }
+.term-top { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.07); }
+.term-top i { width: 10px; height: 10px; border-radius: 50%; background: #3a4a5e; }
+.term-top span { margin-left: 8px; font: 400 12px/1 var(--f-mono); color: var(--term-dim); flex: 1; }
+.term-top button { all: unset; cursor: pointer; font: 400 12px/1 var(--f-mono); color: var(--term-dim); padding: 4px; }
+.term-top button:focus-visible { outline: 1px solid #ffb36b; }
+.term-body { height: min(420px, 60vh); overflow-y: auto; padding: 14px 16px; font: 400 13.5px/1.55 var(--f-mono); }
+.term-body .ln { white-space: pre-wrap; word-break: break-word; }
+.term-body .p { color: var(--term-accent); }
+.term-body .d { color: var(--term-dim); }
+.term-body .o { color: #ffb36b; }
+.term-body .g { color: #6fdca5; }
+.term-body button.cmd { all: unset; color: #ffb36b; cursor: pointer; text-decoration: underline dotted; }
+.term-body button.cmd:focus-visible { outline: 1px solid #ffb36b; }
+.term-in { display: flex; gap: 8px; align-items: center; padding: 10px 16px 14px; font: 400 13.5px/1 var(--f-mono); }
+.term-in label { color: var(--term-accent); white-space: nowrap; }
+.term-in input { flex: 1; min-width: 0; background: transparent; border: 0; color: var(--term-fg); font: inherit; caret-color: #ffb36b; outline: none; }
+
+/* detail modal */
+dialog.detail { border: 1px solid var(--line); border-radius: 14px; padding: 0; width: min(680px, calc(100vw - 24px)); background: var(--surface); color: var(--ink); }
+.m-img { aspect-ratio: 16 / 9; max-width: 100%; background: var(--grid); display: grid; place-items: center; border-bottom: 1px solid var(--line); overflow: hidden; }
+.m-img img { width: 100%; height: 100%; object-fit: contain; }
+.m-img .glyph { font: 700 52px/1 var(--f-display); color: var(--accent); }
+.m-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; }
+.m-body h3 { font-size: 22px; }
+.m-body p { color: var(--muted); }
+.mono-id { font: 400 12.5px/1.4 var(--f-mono); overflow-wrap: anywhere; }
+.m-close { position: absolute; top: 10px; right: 10px; }
+
+.toast { position: fixed; left: 50%; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--surface); font: 500 13px/1 var(--f-mono); padding: 12px 16px; border-radius: 8px; z-index: 20; }
+.flagbar { font: 400 12.5px/1.5 var(--f-mono); color: var(--muted); text-align: center; padding-block: 0 8px; }
+.flagbar b { color: var(--signal); font-variant-numeric: tabular-nums; }
+.hidden-flag { color: transparent; font: 400 1px/1 var(--f-mono); }
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 18px 80px; font: 400 12px/1.5 var(--f-mono); color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+
+@media (max-width: 900px) {
+  .profile .wrap, .cols .wrap, .contact .panel { grid-template-columns: 1fr; }
+  .profile .wrap { padding-block: 28px 20px; gap: 22px; }
+  .ach-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .summary { min-height: 260px; padding: 22px; }
+}
+@media (max-width: 520px) {
+  .brand { display: none; }
+  .ach-grid { grid-template-columns: 1fr; }
+  .panel { padding: 18px; }
+}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">raul<span>@</span>alderete</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#experience">experience</a>
+      <a href="#talks">talks</a>
+      <a href="#education">education</a>
+      <a href="#certs">certs</a>
+      <a href="#projects">projects</a>
+      <a href="#training">training</a>
+      <a href="#skills">skills</a>
+      <a href="#achievements">achievements</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <button class="iconbtn" id="themeBtn" type="button" aria-label="Switch color theme">◐ theme</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="profile">
+    <div class="wrap">
+      <div class="who">
+        <div class="avatar" id="avatar" aria-label="Photo of Raul Alderete">RA</div>
+        <div>
+          <h1>Raul <span class="last">Alderete</span></h1>
+          <div class="title">Cybersecurity Analyst</div>
+        </div>
+        <div class="certline" id="certLine"></div>
+        <div class="loc">San Francisco Bay Area · English &amp; Spanish</div>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn" href="https://www.linkedin.com/in/raulalderete" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/xcod3" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" href="https://www.youtube.com/@CSAcademyORG" target="_blank" rel="noopener">YouTube ↗</a>
+        </div>
+      </div>
+      <div class="summary" aria-labelledby="sumLabel">
+        <pre class="codebg" aria-hidden="true"><div class="roll" id="codeRoll"></div></pre>
+        <span class="label" id="sumLabel">Summary</span>
+        <p id="summary">I built my first computer inside a shoebox in Holguín, Cuba, at fifteen. Since then I've spent 10+ years building, hardening and fixing the servers, networks and Linux systems underneath everything else: from a CentOS cluster and a full Fortinet migration to a GPU server running a self-hosted LLM. I co-founded CS-Academy and taught Linux and ethical hacking there for five years.</p>
+        <div class="prompt">$ <b>press</b> the terminal button, bottom right, to explore interactively</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cols">
+    <div class="wrap">
+      <div class="stack">
+      <article class="panel" id="experience">
+        <div class="panel-head">
+          <h2><small>ssh experience</small>Experience</h2>
+          <div class="filters" id="xpFilters" aria-label="Highlight roles by focus"></div>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </article>
+
+      <article class="panel" id="talks">
+        <div class="panel-head"><h2><small>./speak --public</small>Tech Talks &amp; Webinars</h2><span class="label">all in Spanish · tap for details</span></div>
+        <div class="talks" id="talkGrid"></div>
+      </article>
+      </div>
+
+      <div class="stack">
+        <article class="panel" id="education">
+          <div class="panel-head"><h2><small>cat /etc/education</small>Education</h2></div>
+          <div class="list" id="eduList"></div>
+          <div class="sub">Languages</div>
+          <p class="langs">Spanish (native) · English (professional) · Portuguese (elementary)</p>
+        </article>
+
+        <article class="panel" id="certs">
+          <div class="panel-head"><h2><small>openssl verify</small>Certifications</h2></div>
+          <div id="certList"></div>
+        </article>
+
+        <article class="panel" id="projects">
+          <div class="panel-head"><h2><small>ls ~/projects</small>Projects</h2><span class="label">tap for details</span></div>
+          <div id="projList"></div>
+        </article>
+
+        <article class="panel" id="code">
+          <div class="panel-head"><h2><small>git remote -v</small>Code &amp; channels</h2></div>
+          <div class="links">
+            <a class="chan" href="https://github.com/xcod3" target="_blank" rel="noopener"><span class="thumb">GH</span><span><b>github.com/xcod3</b><span>GitHub · <span class="badge">❄ Arctic Code Vault Contributor</span></span></span><i>↗</i></a>
+            <a class="chan" href="https://www.youtube.com/@CSAcademyORG" target="_blank" rel="noopener"><span class="thumb">▶</span><span><b>@CSAcademyORG</b><span>YouTube · courses in Spanish</span></span><i>↗</i></a>
+            <a class="chan" href="https://cs-academy.org" target="_blank" rel="noopener"><span class="thumb">CS</span><span><b>cs-academy.org</b><span>The academy I co-founded</span></span><i>↗</i></a>
+          </div>
+        </article>
+
+        <article class="panel" id="skills">
+          <div class="panel-head"><h2><small>which --all</small>Skills</h2></div>
+          <div id="skillList"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="wrap">
+      <article class="panel" id="training">
+        <div class="panel-head"><h2><small>ls ~/certificates/*.pdf</small>Training certificates</h2><div class="filters" id="trainFilters"></div></div>
+        <div class="gal" id="trainGrid"></div>
+        <p class="fineprint" id="trainNote"></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="ach">
+    <div class="wrap">
+      <article class="panel" id="achievements">
+        <div class="panel-head"><h2><small>grep -r "shipped"</small>Achievements</h2></div>
+        <div class="ach-grid" id="achGrid"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <article class="panel" id="contact">
+        <div>
+          <h2>Open a connection</h2>
+          <p>Hiring for systems, infrastructure or security engineering in the Bay Area or remote? I'd like to hear about it.</p>
+        </div>
+        <div class="links" id="contactLinks"></div>
+      </article>
+    </div>
+  </section>
+
+  <div class="flagbar wrap">
+    🏁 There are <b id="flagTotal">3</b> flags hidden on this site. You've found <b id="flagCount">0</b>. Submit them in the terminal with <code>flag RA{...}</code>.
+    <span class="hidden-flag" aria-hidden="true">RA{v13w_s0urc3_l1k3_a_pr0}</span>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> Raul Alderete</span><span>Hand-built in HTML, CSS and a little JavaScript. No trackers.</span></div></footer>
+
+<button class="fab" id="fab" type="button" aria-haspopup="dialog"><b>&gt;_</b> terminal</button>
+
+<dialog class="term" id="term" aria-label="Interactive terminal">
+  <div class="term-top"><i></i><i></i><i></i><span>guest@raulalderete.com: ~</span><button type="button" id="termClose">✕ exit</button></div>
+  <div class="term-body" id="termOut" aria-live="polite"></div>
+  <form class="term-in" id="termForm" autocomplete="off">
+    <label for="termIn">guest@raul:~$</label>
+    <input id="termIn" type="text" spellcheck="false" autocapitalize="off" placeholder="type help">
+  </form>
+</dialog>
+
+<dialog class="detail" id="modal">
+  <button class="iconbtn m-close" type="button" id="mClose" aria-label="Close">✕ close</button>
+  <div class="m-img" id="mImg"></div>
+  <div class="m-body" id="mBody"></div>
+</dialog>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ==================================================================
+   RESUME DATA. Edit this block to update the site.
+   image: path to a file in images/ (e.g. "images/security-plus.png"), or "" for a placeholder.
+   ================================================================== */
+const RESUME = {
+  photo: "images/raul.jpg",   // e.g. "images/raul.jpg"
+  experience: [
+    { title: "Retail Manager", org: "Walmart", dates: "Feb 2024 to present", place: "Milpitas, CA", focus: ["Leadership"],
+      points: ["Lead 4 team leads and 25 associates, with oversight of 300+ associates storewide, at one of the busiest Supercenters in the Bay Area.",
+               "Promoted from associate to team lead within one month; previously Asset Protection Team Lead, responding to and documenting on-site incidents.",
+               "Lead teams in English and Spanish; own the sales floor, associate development and daily operations."] },
+    { title: "Network Engineer", org: "IT1Demand", dates: "Aug 2023 to Jul 2024", place: "Fremont & Union City, CA", focus: ["Networking", "Systems"],
+      points: ["Primary hands-on engineer on a complete network migration to Fortinet: 15 indoor access points, 12 switches, 2 data center racks with servers and 20 indoor and outdoor security cameras.",
+               "Migrated servers, switches and routers; ran structured cabling and upgraded data center equipment.",
+               "On-site support for Delta offices in Fremont and Union City, working hardware, network and system tickets."] },
+    { title: "Co-founder, Infrastructure Lead & Instructor", org: "CS-Academy", dates: "Aug 2019 to Dec 2024", place: "Remote", focus: ["Systems", "Security", "Leadership"],
+      points: ["Designed, built and ran the company's Linux cloud infrastructure (email, Moodle and file servers) for 500+ active clients.",
+               "Led computer security audit processes and wrote all technical documentation, installation procedures and SOPs.",
+               "Taught Linux, system administration and ethical hacking as a Linux Professional Institute Approved Training Partner; produced 150+ hands-on technical videos."] },
+    { title: "Freelance Systems & Security Consultant", org: "Guru.com", dates: "2017 to 2023", place: "Remote", focus: ["Security", "Systems"],
+      points: ["Built, configured, hardened and migrated Linux servers; deployed Apache, Nginx and WordPress.",
+               "Penetration testing of websites and IoT devices; installed firewalls and IDS/IPS.",
+               "Malware detection and analysis, and forensic analysis of compromised systems."] },
+    { title: "Systems & Network Administrator", org: "Net-Solutions", dates: "2013 to 2017", place: "", focus: ["Systems", "Networking"],
+      points: ["Built and administered a CentOS server cluster plus Linux servers and virtualization (VMware, Proxmox, Docker, AWS).",
+               "Installed and configured switches and Wi-Fi; flashed OpenWRT, DD-WRT, AirOS (Ubiquiti) and RouterOS (MikroTik).",
+               "Repaired ASUS motherboards, routers and network hardware at the component level; built and installed Wi-Fi antennas.",
+               "Wrote Bash scripts to monitor critical systems and applications."] },
+    { title: "Systems Administrator", org: "Provincial Directorate of Culture", dates: "2010 to 2012", place: "", focus: ["Systems", "Networking"],
+      points: ["Administered Windows and Linux servers: email, Squid proxy and the thin-client server.",
+               "Ran the internet room for staff and visitors; supported 12 workstations and closed 5 to 10 tickets a day."] }
+  ],
+  talks: [
+    { title: "Building a Home Wi-Fi Router with a Raspberry Pi", event: "FLISoL", year: "2017", place: "Holguín, Cuba", kind: "Conference talk", image: "images/talks/flisol-2017-classroom.jpg" },
+    { title: "Parrot Security OS: A Privacy and Cybersecurity Oriented Distribution", event: "FLISoL", year: "2019", place: "Holguín, Cuba", kind: "Conference talk", image: "images/talks/flisol-2019/01.jpg", slides: 16, slidesDir: "images/talks/flisol-2019/" },
+    { title: "Professional Opportunities in Linux and Open Source", event: "LPI Webinar", year: "", kind: "Webinar", image: "images/talks/lpi-opportunities.jpg" },
+    { title: "Improving My Privacy and Security on the Internet", event: "LPI Webinar", year: "", kind: "Webinar", image: "images/talks/lpi-privacy.jpg" },
+    { title: "A Penetration Testing Methodology", event: "Hablemos de Ciberseguridad 1.1 · Parrot OS, PubDev & ICS", year: "", kind: "Webinar", image: "images/talks/parrot-pentest-methodology.jpg" },
+    { title: "Metasploit Framework Hands-on Lab", event: "Dojo Webinar", year: "2020", kind: "Webinar", image: "images/talks/dojo-metasploit.jpg" },
+    { title: "The Importance of Cybersecurity", event: "FLOSS CR 2020", year: "2020", place: "Costa Rica (online)", kind: "Conference talk", image: "images/talks/flosscr-2020.jpg" },
+    { title: "GNU/Linux Hands-on Lab", event: "LPI Live · Hablando con experTUX", year: "", kind: "Webinar", image: "images/talks/lpi-linux-lab.jpg" }
+  ],
+  education: [
+    { name: "Information Technology", where: "Sophia Learning · 2025 to 2026 · 13 college credits" },
+    { name: "Computer Science coursework", where: "Universidad de las Ciencias Informáticas (UCI), Havana · 2008 to 2010" },
+    { name: "High School Diploma", where: "EIDE Pedro Díaz Coello, Holguín · 2008" }
+  ],
+  training: [
+    { name: "Advanced Penetration Testing", cat: "Offensive", issuer: "Cybrary", date: "May 2017", ceu: 15, hours: 15, id: "C-b824eb772-117bb4", image: "images/certs/cybrary-advanced-pentest.jpg" },
+    { name: "Penetration Testing and Ethical Hacking", cat: "Offensive", issuer: "Cybrary", date: "May 2017", ceu: 12, hours: 10, id: "C-b824eb772-a2f5b1", image: "images/certs/cybrary-pentest-ethical-hacking.jpg" },
+    { name: "Post Exploitation Hacking", cat: "Offensive", issuer: "Cybrary", date: "Mar 2019", ceu: 10, hours: 8, id: "C-b824eb772-1883bf", image: "images/certs/cybrary-post-exploitation.jpg" },
+    { name: "Metasploit", cat: "Offensive", issuer: "Cybrary", date: "May 2017", ceu: 6, hours: 6, id: "C-b824eb772-5e31d25", image: "images/certs/cybrary-metasploit.jpg" },
+    { name: "Incident Response and Advanced Forensics", cat: "Defense & forensics", issuer: "Cybrary", date: "Mar 2019", ceu: 7, hours: 8, id: "C-b824eb772-efc0bb", image: "images/certs/cybrary-incident-response-forensics.jpg" },
+    { name: "Computer Hacking and Forensics", cat: "Defense & forensics", issuer: "Cybrary", date: "Jun 2017", ceu: 6, hours: 6, id: "C-b824eb772-8a34401", image: "images/certs/cybrary-hacking-forensics.jpg" },
+    { name: "End User: Network Security", cat: "Defense & forensics", issuer: "Cybrary", date: "Sep 2018", ceu: 1, hours: 0, id: "CC-93dab85c-3ec8-468d-8381-cf116f3eb101", image: "images/certs/cybrary-end-user-network-security.jpg" },
+    { name: "NSA Day of Cyber", cat: "Defense & forensics", issuer: "National Security Agency · LifeJourney", date: "Sep 2017", note: "Cybersecurity terminology, insider-threat best practices, and teamwork in a simulated Cyber Threat Center.", image: "images/certs/nsa-day-of-cyber.jpg" },
+    { name: "Fundamentos de la ciberseguridad para profesionales IT", cat: "Defense & forensics", issuer: "LinkedIn Learning", date: "Jul 2020", hours: 3, note: "Course in Spanish covering cybersecurity and network security fundamentals.", id: "8bb39727cf386e8b056d4064831329bb45e4cfc39eab7cd9ba7a40d13ac4b192", image: "images/certs/linkedin-fundamentos-ciberseguridad.jpg" },
+    { name: "CCNA", cat: "Systems & networking", issuer: "Cybrary", date: "May 2017", ceu: 16, hours: 16, id: "CC-46cc3c05-84b4-49e4-b89f-13dad73cc659", image: "images/certs/cybrary-ccna.jpg" },
+    { name: "CompTIA Linux+", cat: "Systems & networking", issuer: "Cybrary", date: "May 2017", ceu: 10, hours: 6, id: "C-b824eb772-f52ea8", image: "images/certs/cybrary-comptia-linux-plus.jpg" },
+    { name: "Fundamental Linux Administration", cat: "Systems & networking", issuer: "Cybrary", date: "Jun 2017", ceu: 3, hours: 7, id: "SC-b824eb772-31c7f", image: "images/certs/cybrary-linux-administration.jpg" },
+    { name: "Introduction to SAN and NAS Storage", cat: "Systems & networking", issuer: "Udemy", date: "Nov 2017", hours: 1.5, id: "UC-YYI4Y0JX", verify: "https://ude.my/UC-YYI4Y0JX", image: "images/certs/udemy-san-nas.jpg" },
+    { name: "Intro to Python", cat: "Systems & networking", issuer: "Cybrary", date: "May 2017", ceu: 3, hours: 3, id: "C-b824eb772-a9ae436", image: "images/certs/cybrary-intro-python.jpg" },
+    { name: "Business Analysis & Process Management", cat: "Other", issuer: "Coursera Project Network", date: "Feb 2025", id: "XT0VR9VJ8893", image: "images/certs/coursera-business-analysis.jpg" }
+  ],
+  certs: [
+    { name: "CompTIA Security+", short: "Security+", issuer: "CompTIA", year: "expected Nov 2026", status: "in progress", image: "", verify: "" },
+    { name: "Cybersecurity Awareness Professional Certification (CAPC)", short: "CAPC", issuer: "CertiProf", year: "valid until Oct 2027", status: "earned", id: "7a3125ee", image: "images/certs/certiprof-capc.jpg", verify: "" },
+    { name: "CompTIA Competency in Technology Fundamentals", short: "Tech Fundamentals", issuer: "CompTIA", year: "Oct 2026", status: "earned", id: "6-2C6-27JNLG", note: "100% performance-based assessment.", image: "images/certs/comptia-tech-fundamentals.jpg", verify: "" },
+    { name: "CompTIA Competency in AI Prompting Essentials", short: "AI Prompting", issuer: "CompTIA", year: "Oct 2026", status: "earned", id: "6-2C6-27JMCT", image: "images/certs/comptia-ai-prompting.jpg", verify: "" }
+  ],
+  projects: [
+    { name: "Ethical Hacking Course", sub: "YouTube course in Spanish · CS-Academy", lang: "ES", glyph: "▶", blurb: "Video course on ethical hacking that I created and taught in Spanish at CS-Academy, part of the 150+ hands-on technical videos I produced.", image: "", link: "https://www.youtube.com/@CSAcademyORG", linkText: "Watch on YouTube", link2: "https://cs-academy.org", link2Text: "cs-academy.org" },
+    { name: "Linux Course", sub: "YouTube course in Spanish · CS-Academy", lang: "ES", glyph: "▶", blurb: "Linux and system administration course taught in Spanish under CS-Academy's Linux Professional Institute Approved Training Partner program.", image: "", link: "https://www.youtube.com/@CSAcademyORG", linkText: "Watch on YouTube", link2: "https://cs-academy.org", link2Text: "cs-academy.org" },
+    { name: "GPU & AI home lab", sub: "Ubuntu · NVIDIA CUDA · Ollama", glyph: "GPU", blurb: "Ubuntu GPU server running a self-hosted LLM with Ollama. NVIDIA drivers and CUDA set up from scratch, GPU health watched with nvidia-smi, and GPU acceleration used for password auditing in security testing.", image: "" },
+    { name: "Fortinet network migration", sub: "IT1Demand · Bay Area", glyph: "NET", blurb: "Full migration for a Bay Area client: 12 switches, 15 access points, 2 data center racks and 20 security cameras, installed and cut over hands-on.", image: "images/projects/fortinet-migration.jpg" },
+    { name: "CS-Academy platform", sub: "Moodle · mail · file servers", glyph: "CS", blurb: "Linux cloud stack behind an online academy: Moodle, mail and file servers for 500+ active clients, documented end to end with SOPs.", image: "", link: "https://cs-academy.org", linkText: "Visit cs-academy.org" },
+    { name: "CentOS server cluster", sub: "Net-Solutions", glyph: "OS", blurb: "Built and ran a CentOS cluster alongside VMware and Proxmox virtualization, with Bash monitoring for critical services.", image: "" },
+    { name: "Wireless builds & custom firmware", sub: "OpenWRT · DD-WRT · RouterOS", glyph: "RF", blurb: "Hand-built Wi-Fi antennas and reflashed routers with OpenWRT, DD-WRT, AirOS and RouterOS to stretch networks further for less.", image: "" }
+  ],
+  skills: [
+    { area: "Linux & systems", items: ["Ubuntu", "Red Hat", "CentOS", "Rocky", "Fedora", "Debian", "Arch", "Windows Server"] },
+    { area: "Security", items: ["Web & IoT pentesting", "Hardening", "Firewalls", "IDS/IPS", "Malware analysis", "Forensics", "Password auditing"] },
+    { area: "Networking", items: ["TCP/IP", "DNS", "DHCP", "VPN", "Fortinet", "Palo Alto", "MikroTik", "Ubiquiti", "Fiber"] },
+    { area: "Virtualization & cloud", items: ["Proxmox", "VMware", "Docker", "Kubernetes (familiar)", "AWS", "GCP"] },
+    { area: "Hardware & GPU", items: ["Server bring-up", "Component repair", "BIOS & firmware", "NVIDIA / CUDA"] },
+    { area: "Scripting", items: ["Bash", "Python", "PowerShell"] }
+  ],
+  achievements: [
+    { big: "47", title: "network devices in one migration", text: "12 switches, 15 access points and 20 cameras, plus 2 data center racks, moved to Fortinet as the primary hands-on engineer." },
+    { big: "500+", title: "clients on infrastructure I built", text: "CS-Academy's mail, Moodle and file servers, designed and run end to end." },
+    { big: "150+", title: "technical videos produced", text: "Linux, sysadmin and ethical hacking lessons for CS-Academy students." },
+    { big: "❄", title: "Arctic Code Vault Contributor", text: "Code I contributed to on GitHub was preserved in the 2020 GitHub Archive Program's vault in Svalbard, Norway, built to last 1,000 years.", link: "https://github.com/xcod3" },
+    { big: "89", title: "CPE credits of security training", text: "85 hours of Cybrary coursework in pentesting, forensics, Linux and networking. Certificates are in the gallery above." },
+    { big: "10+", title: "years in systems & networks", text: "From Holguín to the Bay Area, plus nearly 20 years building and repairing hardware." },
+    { big: "LPI", title: "Approved Training Partner", text: "Taught Linux under the Linux Professional Institute's partner program." },
+    { big: "8", title: "tech talks & webinars", text: "Linux, open source and pentesting talks at FLISoL, FLOSS CR 2020, LPI, Parrot OS and Dojo, across Latin America." }
+  ],
+  contact: [
+    { label: "Email", value: "hello@raulalderete.com", copy: true },
+    { label: "LinkedIn", value: "linkedin.com/in/raulalderete", href: "https://www.linkedin.com/in/raulalderete" },
+    { label: "GitHub", value: "github.com/xcod3", href: "https://github.com/xcod3" },
+    { label: "CS-Academy", value: "cs-academy.org", href: "https://cs-academy.org" },
+    { label: "YouTube", value: "youtube.com/@CSAcademyORG", href: "https://www.youtube.com/@CSAcademyORG" }
+  ]
+};
+const FLAGS = { "RA{v13w_s0urc3_l1k3_a_pr0}": "source viewer", "RA{r00t_0f_th3_r3sum3}": "sudo", "RA{c0ns0l3_c0wb0y}": "console" };
+
+/* ===================== rendering ===================== */
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const initials = s => s.replace(/[()&]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const statusCls = s => s === "earned" ? "st-ok" : "st-prog";
+
+$("#yr").textContent = new Date().getFullYear();
+if (RESUME.photo) $("#avatar").innerHTML = `<img src="${esc(RESUME.photo)}" alt="Raul Alderete">`;
+
+// code behind the summary (real commands from Raul's own stack)
+const CODE = `$ nvidia-smi --query-gpu=name,temperature.gpu,utilization.gpu --format=csv
+$ watch -n1 nvidia-smi
+$ ollama run llama3 "summarize /var/log/auth.log"
+$ sudo ufw default deny incoming && sudo ufw allow 22/tcp
+$ ssh-keygen -t ed25519 -C "raul@raulalderete.com"
+config system interface
+    edit "port1"
+        set allowaccess ping https ssh
+        set role lan
+    next
+end
+$ nmap -sV -p- --open 10.0.0.0/24 -oN lab-scan.txt
+$ sudo systemctl status postfix dovecot apache2
+$ pvecm status   # Proxmox cluster quorum
+/ip firewall filter add chain=input action=drop in-interface=ether1
+$ for h in $(cat hosts.txt); do ping -c1 -W1 $h >/dev/null || echo "$h DOWN"; done
+$ docker compose up -d moodle mariadb
+$ hashcat -m 1000 -a 0 audit.ntlm rockyou.txt --status
+$ rpm -qa --last | head   # CentOS cluster node
+$ tail -f /var/log/suricata/fast.log
+`;
+$("#codeRoll").textContent = CODE + CODE;
+
+$("#certLine").innerHTML = RESUME.certs.map(c => `<span class="certpill ${c.status === "earned" ? "" : "prog"}">${esc(c.short)}${c.status === "earned" ? "" : " · in progress"}</span>`).join("");
+
+// experience + focus filter
+const FOCUS = ["All", "Systems", "Security", "Networking", "Leadership"];
+$("#timeline").innerHTML = RESUME.experience.map((x, i) => `
+  <div class="role" data-focus="${x.focus.join(" ")}">
+    <h3>${esc(x.title)}</h3>
+    <div class="meta"><b>${esc(x.org)}</b>${x.place ? `<span>${esc(x.place)}</span>` : ""}<span>${esc(x.dates)}</span></div>
+    <ul>${x.points.map(p => `<li>${esc(p)}</li>`).join("")}</ul>
+  </div>`).join("");
+$("#xpFilters").innerHTML = FOCUS.map((f, i) => `<button class="chip" type="button" aria-pressed="${i === 0}">${f}</button>`).join("");
+$("#xpFilters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  document.querySelectorAll("#xpFilters .chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+  const f = b.textContent;
+  document.querySelectorAll(".role").forEach(r => r.classList.toggle("dim", f !== "All" && !r.dataset.focus.split(" ").includes(f)));
+});
+
+$("#talkGrid").innerHTML = RESUME.talks.map((t, i) => `
+  <button class="talk" type="button" data-kind="talk" data-i="${i}">
+    <span class="shot"><img src="${esc(t.image)}" alt="" loading="lazy"><span class="kind">${esc(t.slides ? "Slides" : t.kind)}</span></span>
+    <span class="cap"><b>${esc(t.title)}</b><span class="ev">${esc(t.event)}${t.year ? " · " + esc(t.year) : ""}</span></span>
+  </button>`).join("");
+
+const itemRow = i => `<div class="item"><i class="dot"></i><div><b>${esc(i.name)}</b><span>${esc(i.where)}</span></div></div>`;
+$("#eduList").innerHTML = RESUME.education.map(itemRow).join("");
+const CATS = ["All", ...new Set(RESUME.training.map(t => t.cat))];
+$("#trainGrid").innerHTML = RESUME.training.map((t, i) => `
+  <button class="gcard" type="button" data-kind="train" data-i="${i}" data-cat="${esc(t.cat)}">
+    <span class="shot">${t.image ? `<img src="${esc(t.image)}" alt="Certificate: ${esc(t.name)}" loading="lazy">` : esc(initials(t.name))}</span>
+    <span class="cap"><b>${esc(t.name)}</b><span>${esc(t.issuer)}${t.date ? " · " + esc(t.date) : ""}${t.hours ? " · " + t.hours + " h" : ""}</span></span>
+  </button>`).join("");
+$("#trainFilters").innerHTML = CATS.map((c, i) => `<button class="chip" type="button" aria-pressed="${i === 0}">${esc(c)}</button>`).join("");
+$("#trainFilters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  $("#trainFilters").querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+  document.querySelectorAll(".gcard").forEach(g => g.hidden = b.textContent !== "All" && g.dataset.cat !== b.textContent);
+});
+const ceus = RESUME.training.reduce((n, t) => n + (t.ceu || 0), 0), hrs = RESUME.training.reduce((n, t) => n + (t.hours || 0), 0);
+$("#trainNote").textContent = `${RESUME.training.length} courses · ${ceus} CEU/CPE credits · ${hrs} hours. These are course completion certificates (continuing education), separate from the certifications above.`;
+
+const thumb = (item, glyph) => `<span class="thumb">${item.image ? `<img src="${esc(item.image)}" alt="" loading="lazy">` : esc(glyph)}</span>`;
+$("#certList").innerHTML = RESUME.certs.map((c, i) => `
+  <button class="thumbrow" type="button" data-kind="cert" data-i="${i}">${thumb(c, initials(c.short))}
+    <span><b>${esc(c.name)}</b><span>${esc(c.issuer)} · ${esc(c.year)} · <span class="${statusCls(c.status)}">${esc(c.status)}</span></span></span></button>`).join("");
+$("#projList").innerHTML = RESUME.projects.map((p, i) => `
+  <button class="thumbrow" type="button" data-kind="proj" data-i="${i}">${thumb(p, p.glyph)}
+    <span><b>${esc(p.name)}${p.lang ? `<span class="lang">${esc(p.lang)}</span>` : ""}</b><span>${esc(p.sub)}</span></span></button>`).join("");
+$("#skillList").innerHTML = RESUME.skills.map(s => `<div class="skillgrp"><span class="label">${esc(s.area)}</span><div class="tags">${s.items.map(n => `<span class="tag">${esc(n)}</span>`).join("")}</div></div>`).join("");
+$("#achGrid").innerHTML = RESUME.achievements.map(a => `<div class="ach-tile"><b>${esc(a.big)}</b><strong>${a.link ? `<a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)} ↗</a>` : esc(a.title)}</strong><span>${esc(a.text)}</span></div>`).join("");
+$("#contactLinks").innerHTML = RESUME.contact.map((c, i) => `
+  <div class="linkrow"><span><span class="label">${esc(c.label)}</span><br>${esc(c.value)}</span>
+  ${c.copy ? `<button class="iconbtn" type="button" data-copy="${i}">copy</button>` : `<a class="iconbtn" href="${esc(c.href)}" target="_blank" rel="noopener">open ↗</a>`}</div>`).join("");
+
+/* ===================== detail modal ===================== */
+const modal = $("#modal");
+function openItem(kind, i) {
+  const big = (it, g) => it.image ? `<img src="${esc(it.image)}" alt="${esc(it.name)}">` : `<span class="glyph">${esc(g)}</span>`;
+  if (kind === "cert") {
+    const c = RESUME.certs[i];
+    $("#mImg").innerHTML = big(c, initials(c.short));
+    $("#mBody").innerHTML = `<span class="label">${esc(c.issuer)} · ${esc(c.year)}</span><h3>${esc(c.name)}</h3>
+      <p class="${statusCls(c.status)}">● ${esc(c.status)}</p>${c.note ? `<p>${esc(c.note)}</p>` : ""}${c.id ? `<p class="mono-id">Certificate ID: ${esc(c.id)}</p>` : ""}
+      ${c.verify ? `<a class="btn" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify credential ↗</a>` : ""}`;
+  } else if (kind === "talk") {
+    const t = RESUME.talks[i];
+    let n = 1;
+    const show = () => { $("#mImg").innerHTML = `<img src="${t.slides ? esc(t.slidesDir) + String(n).padStart(2, "0") + ".jpg" : esc(t.image)}" alt="${esc(t.title)}${t.slides ? ", slide " + n : ""}">`; const c = $("#slideCount"); if (c) c.textContent = `${n} / ${t.slides}`; };
+    $("#mBody").innerHTML = `<span class="label">${esc(t.kind)} · in Spanish</span><h3>${esc(t.title)}</h3>
+      <p>${esc(t.event)}${t.year ? " · " + esc(t.year) : ""}${t.place ? " · " + esc(t.place) : ""}</p>
+      ${t.slides ? `<div class="slidenav"><button class="iconbtn" type="button" id="slPrev" aria-label="Previous slide">← prev</button><span id="slideCount"></span><button class="iconbtn" type="button" id="slNext" aria-label="Next slide">next →</button></div>` : ""}`;
+    show();
+    if (t.slides) {
+      $("#slPrev").onclick = () => { n = n > 1 ? n - 1 : t.slides; show(); };
+      $("#slNext").onclick = () => { n = n < t.slides ? n + 1 : 1; show(); };
+      modal.onkeydown = e => { if (e.key === "ArrowRight") $("#slNext").click(); if (e.key === "ArrowLeft") $("#slPrev").click(); };
+    } else modal.onkeydown = null;
+  } else if (kind === "train") {
+    const t = RESUME.training[i];
+    $("#mImg").innerHTML = big(t, initials(t.name));
+    $("#mBody").innerHTML = `<span class="label">${esc(t.cat)}</span><h3>${esc(t.name)}</h3>
+      <p>${esc(t.issuer)}${t.date ? " · completed " + esc(t.date) : ""}${t.ceu ? ` · ${t.ceu} CEU/CPE credits` : ""}${t.hours ? ` · ${t.hours} hours` : ""}</p>
+      ${t.note ? `<p>${esc(t.note)}</p>` : ""}
+      ${t.id ? `<p class="mono-id">Certificate number: ${esc(t.id)}</p>` : ""}
+      ${t.verify ? `<div class="cta"><a class="btn" href="${esc(t.verify)}" target="_blank" rel="noopener">Verify certificate ↗</a></div>` : ""}`;
+  } else {
+    const p = RESUME.projects[i];
+    $("#mImg").innerHTML = big(p, p.glyph);
+    $("#mBody").innerHTML = `<span class="label">${esc(p.sub)}</span><h3>${esc(p.name)}</h3><p>${esc(p.blurb)}</p>
+      <div class="cta">${p.link ? `<a class="btn primary" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.linkText || "View project")} ↗</a>` : ""}${p.link2 ? `<a class="btn" href="${esc(p.link2)}" target="_blank" rel="noopener">${esc(p.link2Text)} ↗</a>` : ""}</div>`;
+  }
+  modal.showModal();
+}
+document.addEventListener("click", e => {
+  const r = e.target.closest(".thumbrow, .gcard, .talk"); if (r) openItem(r.dataset.kind, +r.dataset.i);
+  const cp = e.target.closest("[data-copy]"); if (cp) copy(RESUME.contact[+cp.dataset.copy].value);
+});
+$("#mClose").addEventListener("click", () => modal.close());
+modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });
+
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => t.hidden = true, 2200); }
+function copy(text) {
+  try { navigator.clipboard.writeText(text).then(() => toast("Copied " + text), () => toast(text)); } catch { toast(text); }
+}
+
+/* ===================== theme ===================== */
+const root = document.documentElement;
+const curTheme = () => root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+$("#themeBtn").addEventListener("click", () => {
+  root.dataset.theme = curTheme() === "dark" ? "light" : "dark";
+  try { localStorage.setItem("ra-theme", root.dataset.theme); } catch {}
+});
+try { const t = localStorage.getItem("ra-theme"); if (t) root.dataset.theme = t; } catch {}
+
+/* ===================== nav highlight ===================== */
+const navLinks = [...document.querySelectorAll(".nav a")];
+const io = new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting) navLinks.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + en.target.id));
+}), { rootMargin: "-35% 0px -60% 0px" });
+document.querySelectorAll(".panel[id]").forEach(s => io.observe(s));
+
+/* ===================== flag hunt ===================== */
+let found = new Set();
+try { found = new Set(JSON.parse(localStorage.getItem("ra-flags") || "[]")); } catch {}
+const updateFlags = () => { $("#flagCount").textContent = found.size; $("#flagTotal").textContent = Object.keys(FLAGS).length; };
+updateFlags();
+console.log("%c👋 Hey, fellow console dweller. Here's a flag for you: RA{c0ns0l3_c0wb0y}", "font: 14px monospace; color: #e2701b");
+
+/* ===================== terminal ===================== */
+const term = $("#term"), out = $("#termOut"), inp = $("#termIn");
+const hist = []; let hi = 0;
+function line(html, cls = "") { const d = document.createElement("div"); d.className = "ln " + cls; d.innerHTML = html; out.appendChild(d); out.scrollTop = out.scrollHeight; }
+const cmdBtn = c => `<button class="cmd" type="button" data-run="${c}">${c}</button>`;
+const go = id => { term.close(); document.getElementById(id).scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
+
+const COMMANDS = {
+  help: () => line(`Available commands:
+  ${cmdBtn("whoami")}       who is Raul         ${cmdBtn("story")}      how it started
+  ${cmdBtn("experience")}   work history        ${cmdBtn("education")}  school &amp; training
+  ${cmdBtn("certs")}        certifications      ${cmdBtn("projects")}   courses &amp; builds
+  ${cmdBtn("training")}     course certificates ${cmdBtn("github")}     code
+  ${cmdBtn("talks")}        talks &amp; webinars    ${cmdBtn("youtube")}    courses (ES)
+  ${cmdBtn("skills")}       toolbox             ${cmdBtn("contact")}    get in touch
+  ${cmdBtn("theme")}        dark/light          ${cmdBtn("clear")}      clear screen
+  flag RA{...}  submit a flag
+<span class="d">Tip: ↑/↓ for history, Tab to autocomplete. Some commands are not listed.
+Commands marked "go" close the terminal and jump to that section: add --stay to keep it open.</span>`),
+  whoami: () => line(`<span class="g">raul</span> · Cybersecurity Analyst · Bay Area, CA
+10+ yrs servers, networks &amp; Linux. Pentesting, hardening, forensics.
+Co-founded CS-Academy and taught ethical hacking for 5 years.
+groups: sysadmin netadmin blue-team red-team homelab
+<span class="d">Try</span> ${cmdBtn("story")}`),
+  story: () => line(`<span class="o">2005, Holguín, Cuba.</span> Fifteen years old, a Pentium III and a motherboard
+on a table, all of it living inside a shoebox. It put its first image on a
+CRT monitor and that was it.
+<span class="o">Today:</span> an Ubuntu GPU server running a self-hosted LLM.`),
+  experience: s => { RESUME.experience.forEach(x => line(`<span class="o">${esc(x.dates.padEnd(22))}</span>${esc(x.title)} @ ${esc(x.org)}`)); s || go("experience"); },
+  education: s => { RESUME.education.forEach(e => line(`<span class="o">•</span> ${esc(e.name)} <span class="d">(${esc(e.where)})</span>`)); s || go("education"); },
+  training: s => { RESUME.training.forEach(t => line(`-r--r--r--  ${esc(t.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}.pdf  <span class="d">${esc(t.issuer)}${t.date ? " " + esc(t.date) : ""}</span>`)); s || go("training"); },
+  talks: s => { RESUME.talks.forEach(t => line(`<span class="o">${esc((t.year || "----").padEnd(6))}</span>${esc(t.title)} <span class="d">(${esc(t.event)})</span>`)); s || go("talks"); },
+  github: () => line(`<span class="g">xcod3</span> · github.com/xcod3
+badges: <span class="o">❄ Arctic Code Vault Contributor</span> (2020 GitHub Archive Program)`),
+  youtube: () => line(`youtube.com/@CSAcademyORG · Ethical Hacking and Linux courses, in Spanish`),
+  certs: s => { RESUME.certs.forEach(c => line(`${c.status === "earned" ? '<span class="g">[✓]</span>' : '<span class="o">[~]</span>'} ${esc(c.name)} <span class="d">(${esc(c.year)})</span>`)); s || go("certs"); },
+  projects: s => { RESUME.projects.forEach(p => line(`drwxr-x---  ${esc(p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}/  <span class="d">${esc(p.sub)}</span>`)); s || go("projects"); },
+  skills: s => { RESUME.skills.forEach(k => line(`<span class="o">${esc(k.area)}:</span> ${k.items.map(esc).join(", ")}`)); s || go("skills"); },
+  contact: s => { RESUME.contact.forEach(c => line(`${esc(c.label.padEnd(12))}${esc(c.value)}`)); s || go("contact"); },
+  theme: () => { $("#themeBtn").click(); line(`theme set to ${curTheme()}`, "d"); },
+  clear: () => { out.innerHTML = ""; },
+  exit: () => term.close(),
+  ls: () => line(`experience/  education/  certs/  projects/  skills.txt  contact.txt  <span class="d">.secret</span>`),
+  "cat .secret": () => line(`Permission denied. Maybe try with more privileges?`, "d"),
+  sudo: () => line(`[sudo] password for guest: ********
+<span class="g">Access granted.</span> Hiring Raul is now permitted.
+Here's a flag for your trouble: <span class="o">RA{r00t_0f_th3_r3sum3}</span>`),
+  "rm -rf /": () => line(`Nice try. This resume is immutable.`, "o"),
+  nmap: () => line(`Starting Nmap scan on raulalderete.com
+PORT     STATE  SERVICE
+22/tcp   open   experience
+443/tcp  open   certs
+8080/tcp open   projects
+<span class="d">Scope reminder: only scan what you're authorized to.</span>`),
+  hack: () => line(`Ethical hackers ask first. Try ${cmdBtn("contact")}.`)
+};
+const aliases = { "?": "help", about: "whoami", courses: "projects", hire: "contact", cls: "clear", quit: "exit", "cat secret": "cat .secret" };
+
+function run(raw) {
+  const cmd = raw.trim(); if (!cmd) return;
+  line(`<span class="p">guest@raul:~$</span> ${esc(cmd)}`);
+  hist.push(cmd); hi = hist.length;
+  let low = cmd.toLowerCase();
+  if (low.startsWith("flag ")) {
+    const f = cmd.slice(5).trim();
+    if (FLAGS[f]) {
+      if (found.has(f)) line(`Already captured: ${esc(f)}`, "d");
+      else { found.add(f); try { localStorage.setItem("ra-flags", JSON.stringify([...found])); } catch {} updateFlags(); line(`<span class="g">✓ Flag captured</span> (${found.size}/${Object.keys(FLAGS).length})`); }
+      if (found.size === Object.keys(FLAGS).length) line(`<span class="o">🏆 All flags found. You'd fit right in on a red team. Say hi:</span> ${cmdBtn("contact")}`);
+    } else line(`✗ Invalid flag.`, "d");
+    return;
+  }
+  const stay = / --stay$/.test(low); low = low.replace(/ --stay$/, "");
+  const fn = COMMANDS[low] || COMMANDS[aliases[low]] || (low.startsWith("sudo") && COMMANDS.sudo) || (low.startsWith("nmap") && COMMANDS.nmap) || (low.startsWith("cd ") && COMMANDS[low.slice(3).replace(/\/$/, "")]);
+  if (fn) fn(stay); else line(`command not found: ${esc(cmd)}. Type ${cmdBtn("help")}.`, "d");
+}
+$("#termForm").addEventListener("submit", e => { e.preventDefault(); run(inp.value); inp.value = ""; });
+out.addEventListener("click", e => { const b = e.target.closest("[data-run]"); if (b) run(b.dataset.run + " --stay"); });
+inp.addEventListener("keydown", e => {
+  if (e.key === "ArrowUp" && hi > 0) { inp.value = hist[--hi]; e.preventDefault(); }
+  else if (e.key === "ArrowDown") { hi = Math.min(hist.length, hi + 1); inp.value = hist[hi] || ""; e.preventDefault(); }
+  else if (e.key === "Tab" && inp.value) { const m = Object.keys(COMMANDS).find(k => k.startsWith(inp.value.toLowerCase())); if (m) { inp.value = m; e.preventDefault(); } }
+});
+$("#fab").addEventListener("click", () => { term.showModal(); inp.focus(); });
+$("#termClose").addEventListener("click", () => term.close());
+term.addEventListener("click", e => { if (e.target === term) term.close(); });
+
+line(`<span class="d">Last login: ${new Date().toDateString()} from 127.0.0.1</span>`);
+line(`Welcome to <span class="g">raulalderete.com</span>. Click a command or type one.`);
+COMMANDS.help();
+</script>
+
+</body></html>
