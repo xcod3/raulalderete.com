@@ -1,4 +1,14 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
 <title>Raul Alderete</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Raul Alderete, Cybersecurity Analyst in the San Francisco Bay Area.">
@@ -148,6 +158,8 @@ p { margin: 0; }
 .talk span.ev { font: 400 12px/1.35 var(--f-mono); color: var(--muted); }
 .slidenav { display: flex; align-items: center; gap: 10px; }
 .slidenav span { font: 400 12.5px/1 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.points { margin: 4px 0 12px; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; line-height: 1.5; }
+.galcap { font: 400 12.5px/1.45 var(--f-mono); color: var(--muted); margin: 8px 0 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 @media (max-width: 520px) { .talks { grid-template-columns: 1fr; } }
 
 /* right column lists */
@@ -266,6 +278,8 @@ footer .wrap { padding-block: 18px 80px; font: 400 12px/1.5 var(--f-mono); color
   .panel { padding: 18px; }
 }
 </style>
+</head>
+<body>
 
 <header class="bar">
   <div class="wrap">
@@ -334,7 +348,7 @@ footer .wrap { padding-block: 18px 80px; font: 400 12px/1.5 var(--f-mono); color
           <div class="panel-head"><h2><small>cat /etc/education</small>Education</h2></div>
           <div class="list" id="eduList"></div>
           <div class="sub">Languages</div>
-          <p class="langs">Spanish (native) · English (professional) · Portuguese (elementary)</p>
+          <p class="langs">Spanish (native) · English (professional)</p>
         </article>
 
         <article class="panel" id="certs">
@@ -388,7 +402,7 @@ footer .wrap { padding-block: 18px 80px; font: 400 12px/1.5 var(--f-mono); color
       <article class="panel" id="contact">
         <div>
           <h2>Open a connection</h2>
-          <p>Hiring for systems, infrastructure or security engineering in the Bay Area or remote? I'd like to hear about it.</p>
+          <p>Hiring for a cybersecurity, systems or infrastructure role in the Bay Area or remote? I'd like to hear about it.</p>
         </div>
         <div class="links" id="contactLinks"></div>
       </article>
@@ -461,12 +475,12 @@ const RESUME = {
     { title: "Improving My Privacy and Security on the Internet", event: "LPI Webinar", year: "", kind: "Webinar", image: "images/talks/lpi-privacy.jpg" },
     { title: "A Penetration Testing Methodology", event: "Hablemos de Ciberseguridad 1.1 · Parrot OS, PubDev & ICS", year: "", kind: "Webinar", image: "images/talks/parrot-pentest-methodology.jpg" },
     { title: "Metasploit Framework Hands-on Lab", event: "Dojo Webinar", year: "2020", kind: "Webinar", image: "images/talks/dojo-metasploit.jpg" },
-    { title: "The Importance of Cybersecurity", event: "FLOSS CR 2020", year: "2020", place: "Costa Rica (online)", kind: "Conference talk", image: "images/talks/flosscr-2020.jpg" },
+    { title: "The Importance of Cybersecurity", event: "FLOSS CR", year: "2020", place: "Costa Rica (online)", kind: "Conference talk", image: "images/talks/flosscr-2020.jpg" },
     { title: "GNU/Linux Hands-on Lab", event: "LPI Live · Hablando con experTUX", year: "", kind: "Webinar", image: "images/talks/lpi-linux-lab.jpg" }
   ],
   education: [
     { name: "Information Technology", where: "Sophia Learning · 2025 to 2026 · 13 college credits" },
-    { name: "Computer Science coursework", where: "Universidad de las Ciencias Informáticas (UCI), Havana · 2008 to 2010" },
+    { name: "Computer Science", where: "Universidad de las Ciencias Informáticas (UCI), Havana · 2008 to 2012" },
     { name: "High School Diploma", where: "EIDE Pedro Díaz Coello, Holguín · 2008" }
   ],
   training: [
@@ -487,17 +501,34 @@ const RESUME = {
     { name: "Business Analysis & Process Management", cat: "Other", issuer: "Coursera Project Network", date: "Feb 2025", id: "XT0VR9VJ8893", image: "images/certs/coursera-business-analysis.jpg" }
   ],
   certs: [
-    { name: "CompTIA Security+", short: "Security+", issuer: "CompTIA", year: "expected Nov 2026", status: "in progress", image: "", verify: "" },
-    { name: "Cybersecurity Awareness Professional Certification (CAPC)", short: "CAPC", issuer: "CertiProf", year: "valid until Oct 2027", status: "earned", id: "7a3125ee", image: "images/certs/certiprof-capc.jpg", verify: "" },
-    { name: "CompTIA Competency in Technology Fundamentals", short: "Tech Fundamentals", issuer: "CompTIA", year: "Oct 2026", status: "earned", id: "6-2C6-27JNLG", note: "100% performance-based assessment.", image: "images/certs/comptia-tech-fundamentals.jpg", verify: "" },
-    { name: "CompTIA Competency in AI Prompting Essentials", short: "AI Prompting", issuer: "CompTIA", year: "Oct 2026", status: "earned", id: "6-2C6-27JMCT", image: "images/certs/comptia-ai-prompting.jpg", verify: "" }
+    { name: "Certified Ethical Hacker (CEH)", short: "CEH", issuer: "EC-Council", year: "expected Nov 2026", status: "in progress", image: "images/certs/ec-council-ceh.jpg", verify: "" },
+    { name: "CompTIA Security+", short: "Security+", issuer: "CompTIA", year: "Nov 2026", status: "earned", note: "SY0-701 exam. Valid through Nov 2029.", image: "images/certs/comptia-security-plus.svg", certImg: "images/certs/comptia-security-plus-cert.jpg", code: "b9382f7936e74107962d4b8bde85c0c6", verify: "https://verify.comptia.org" },
+    { name: "CompTIA Tech+", short: "Tech+", issuer: "CompTIA", year: "Oct 2026", status: "earned", image: "images/certs/comptia-tech-plus.svg", certImg: "images/certs/comptia-tech-plus-cert.jpg", code: "229e81d2f14246f9a210a0aa87ddec24", verify: "https://verify.comptia.org" },
+    { name: "CompTIA AI Prompting", short: "AI Prompting", issuer: "CompTIA", year: "Oct 2026", status: "earned", id: "6-2C6-27JMCT", image: "images/certs/comptia-ai-prompting.jpg", verify: "" },
+    { name: "Cybersecurity Awareness Professional Certification (CAPC)", short: "CAPC", issuer: "CertiProf", year: "valid until Oct 2027", status: "earned", id: "7a3125ee", image: "images/certs/certiprof-capc.jpg", verify: "" }
   ],
   projects: [
-    { name: "Ethical Hacking Course", sub: "YouTube course in Spanish · CS-Academy", lang: "ES", glyph: "▶", blurb: "Video course on ethical hacking that I created and taught in Spanish at CS-Academy, part of the 150+ hands-on technical videos I produced.", image: "", link: "https://www.youtube.com/@CSAcademyORG", linkText: "Watch on YouTube", link2: "https://cs-academy.org", link2Text: "cs-academy.org" },
-    { name: "Linux Course", sub: "YouTube course in Spanish · CS-Academy", lang: "ES", glyph: "▶", blurb: "Linux and system administration course taught in Spanish under CS-Academy's Linux Professional Institute Approved Training Partner program.", image: "", link: "https://www.youtube.com/@CSAcademyORG", linkText: "Watch on YouTube", link2: "https://cs-academy.org", link2Text: "cs-academy.org" },
+    { name: "Home SOC lab", sub: "Wazuh SIEM · Active Directory · UniFi IDS/IPS", glyph: "SOC", blurb: "A small security operations lab I built to practice detection and response end to end, from the network edge to the domain controller.", points: [
+      "Wazuh 4.14 SIEM (all-in-one on Ubuntu Server 24.04) monitoring 3 agents, with alerts mapped to MITRE ATT&CK and PCI DSS.",
+      "Active Directory domain on KVM: a Windows Server 2025 domain controller (DC01) and two domain-joined Windows workstations (WS01, WS02) shipping Windows, Sysmon and WEF events.",
+      "CIS Windows Server 2025 benchmark scans, vulnerability detection and file integrity monitoring on the domain controller.",
+      "UniFi Cloud Gateway Fiber with IDS/IPS and a U7 Pro access point, logging to Wazuh over CEF syslog.",
+      "Wrote custom Wazuh decoders and rules for UniFi, since Wazuh has none built in: IDS/IPS detections, firewall events and Wi-Fi client activity, with high-risk detections raised to level 12.",
+      "Kali Linux attack box and Metasploitable 3 targets (Ubuntu 14.04, Windows Server 2008) for attack simulation."
+    ], image: "images/projects/homelab/02.jpg", gallery: [
+      { src: "images/projects/homelab/01.jpg", cap: "Lab network: UCG Fiber gateway, U7 Pro, SIEM host, Kali, DC01, WS01 and WS02" },
+      { src: "images/projects/homelab/02.jpg", cap: "Wazuh overview: 3 active agents and the last 24 hours of alerts by severity" },
+      { src: "images/projects/homelab/03.jpg", cap: "DC01 in Wazuh: MITRE ATT&CK tactics, CIS benchmark score and vulnerability detection" },
+      { src: "images/projects/homelab/04.jpg", cap: "Threat hunting on DC01: Windows, Sysmon and WEF alert groups" },
+      { src: "images/projects/homelab/05.jpg", cap: "Virtual machines on the KVM host, including the Metasploitable 3 targets" },
+      { src: "images/projects/homelab/06.jpg", cap: "WS02, a domain-joined Windows workstation" },
+      { src: "images/projects/homelab/07.jpg", cap: "The SIEM host running wazuh-manager, wazuh-indexer and wazuh-dashboard" }
+    ], link: "https://github.com/xcod3/unifi-wazuh", linkText: "UniFi → Wazuh integration on GitHub" },
+    { name: "Ethical Hacking Course", sub: "YouTube course in Spanish · CS-Academy", lang: "ES", glyph: "▶", blurb: "Ethical hacking course I created and taught in Spanish at CS-Academy, run on the academy's Moodle and published on YouTube. It follows a full penetration testing methodology: lab setup, passive and DNS reconnaissance, service enumeration and vulnerability assessment, exploitation, post-exploitation, password attacks, sniffing, spoofing and MITM, and social engineering.", image: "images/projects/ethical-hacking-moodle.jpg", link: "https://www.youtube.com/@CSAcademyORG", linkText: "Watch on YouTube", link2: "https://cs-academy.org", link2Text: "cs-academy.org" },
+    { name: "Linux Course", sub: "YouTube course in Spanish · CS-Academy", lang: "ES", glyph: "▶", blurb: "Linux and system administration course taught in Spanish under CS-Academy's Linux Professional Institute Approved Training Partner program.", image: "images/projects/cs-academy-youtube.jpg", link: "https://www.youtube.com/@CSAcademyORG", linkText: "Watch on YouTube", link2: "https://cs-academy.org", link2Text: "cs-academy.org" },
     { name: "GPU & AI home lab", sub: "Ubuntu · NVIDIA CUDA · Ollama", glyph: "GPU", blurb: "Ubuntu GPU server running a self-hosted LLM with Ollama. NVIDIA drivers and CUDA set up from scratch, GPU health watched with nvidia-smi, and GPU acceleration used for password auditing in security testing.", image: "" },
     { name: "Fortinet network migration", sub: "IT1Demand · Bay Area", glyph: "NET", blurb: "Full migration for a Bay Area client: 12 switches, 15 access points, 2 data center racks and 20 security cameras, installed and cut over hands-on.", image: "images/projects/fortinet-migration.jpg" },
-    { name: "CS-Academy platform", sub: "Moodle · mail · file servers", glyph: "CS", blurb: "Linux cloud stack behind an online academy: Moodle, mail and file servers for 500+ active clients, documented end to end with SOPs.", image: "", link: "https://cs-academy.org", linkText: "Visit cs-academy.org" },
+    { name: "CS-Academy platform", sub: "Moodle · mail · file servers", glyph: "CS", blurb: "Linux cloud stack behind an online academy: Moodle, mail and file servers for 500+ active clients, documented end to end with SOPs.", image: "images/projects/cs-academy-site.jpg", link: "https://cs-academy.org", linkText: "Visit cs-academy.org" },
     { name: "CentOS server cluster", sub: "Net-Solutions", glyph: "OS", blurb: "Built and ran a CentOS cluster alongside VMware and Proxmox virtualization, with Bash monitoring for critical services.", image: "" },
     { name: "Wireless builds & custom firmware", sub: "OpenWRT · DD-WRT · RouterOS", glyph: "RF", blurb: "Hand-built Wi-Fi antennas and reflashed routers with OpenWRT, DD-WRT, AirOS and RouterOS to stretch networks further for less.", image: "" }
   ],
@@ -517,7 +548,7 @@ const RESUME = {
     { big: "89", title: "CPE credits of security training", text: "85 hours of Cybrary coursework in pentesting, forensics, Linux and networking. Certificates are in the gallery above." },
     { big: "10+", title: "years in systems & networks", text: "From Holguín to the Bay Area, plus nearly 20 years building and repairing hardware." },
     { big: "LPI", title: "Approved Training Partner", text: "Taught Linux under the Linux Professional Institute's partner program." },
-    { big: "8", title: "tech talks & webinars", text: "Linux, open source and pentesting talks at FLISoL, FLOSS CR 2020, LPI, Parrot OS and Dojo, across Latin America." }
+    { big: "10+", title: "tech talks & webinars", text: "Linux, open source and pentesting talks at FLISoL, FLOSS CR 2020, LPI, Parrot OS and Dojo, across Latin America." }
   ],
   contact: [
     { label: "Email", value: "hello@raulalderete.com", copy: true },
@@ -562,7 +593,7 @@ $ tail -f /var/log/suricata/fast.log
 `;
 $("#codeRoll").textContent = CODE + CODE;
 
-$("#certLine").innerHTML = RESUME.certs.map(c => `<span class="certpill ${c.status === "earned" ? "" : "prog"}">${esc(c.short)}${c.status === "earned" ? "" : " · in progress"}</span>`).join("");
+$("#certLine").innerHTML = RESUME.certs.filter(c => c.pill !== false).map(c => `<span class="certpill ${c.status === "earned" ? "" : "prog"}">${esc(c.short)}${c.status === "earned" ? "" : " · in progress"}</span>`).join("");
 
 // experience + focus filter
 const FOCUS = ["All", "Systems", "Security", "Networking", "Leadership"];
@@ -619,13 +650,18 @@ $("#contactLinks").innerHTML = RESUME.contact.map((c, i) => `
 /* ===================== detail modal ===================== */
 const modal = $("#modal");
 function openItem(kind, i) {
+  modal.onkeydown = null;
+  $("#mImg").style.aspectRatio = "";
   const big = (it, g) => it.image ? `<img src="${esc(it.image)}" alt="${esc(it.name)}">` : `<span class="glyph">${esc(g)}</span>`;
   if (kind === "cert") {
     const c = RESUME.certs[i];
-    $("#mImg").innerHTML = big(c, initials(c.short));
+    if (c.certImg) $("#mImg").style.aspectRatio = "1650 / 1275";
+    $("#mImg").innerHTML = c.certImg ? `<img src="${esc(c.certImg)}" alt="${esc(c.name)} certificate">` : big(c, initials(c.short));
     $("#mBody").innerHTML = `<span class="label">${esc(c.issuer)} · ${esc(c.year)}</span><h3>${esc(c.name)}</h3>
       <p class="${statusCls(c.status)}">● ${esc(c.status)}</p>${c.note ? `<p>${esc(c.note)}</p>` : ""}${c.id ? `<p class="mono-id">Certificate ID: ${esc(c.id)}</p>` : ""}
+      ${c.code ? `<p class="mono-id">Verification code: ${esc(c.code)} <button class="iconbtn" type="button" id="copyCode">copy</button></p><p>To verify, open CompTIA's verification page and enter this code.</p>` : ""}
       ${c.verify ? `<a class="btn" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify credential ↗</a>` : ""}`;
+    if (c.code) $("#copyCode").onclick = e => { navigator.clipboard?.writeText(c.code).then(() => { e.target.textContent = "copied"; }, () => {}); };
   } else if (kind === "talk") {
     const t = RESUME.talks[i];
     let n = 1;
@@ -648,10 +684,19 @@ function openItem(kind, i) {
       ${t.id ? `<p class="mono-id">Certificate number: ${esc(t.id)}</p>` : ""}
       ${t.verify ? `<div class="cta"><a class="btn" href="${esc(t.verify)}" target="_blank" rel="noopener">Verify certificate ↗</a></div>` : ""}`;
   } else {
-    const p = RESUME.projects[i];
-    $("#mImg").innerHTML = big(p, p.glyph);
-    $("#mBody").innerHTML = `<span class="label">${esc(p.sub)}</span><h3>${esc(p.name)}</h3><p>${esc(p.blurb)}</p>
+    const p = RESUME.projects[i], g = p.gallery || [];
+    let n = 0;
+    const show = () => { if (!g.length) { $("#mImg").innerHTML = big(p, p.glyph); return; } $("#mImg").innerHTML = `<img src="${esc(g[n].src)}" alt="${esc(g[n].cap)}">`; $("#galCap").textContent = g[n].cap; $("#slideCount").textContent = `${n + 1} / ${g.length}`; };
+    $("#mBody").innerHTML = `${g.length ? `<div class="slidenav"><button class="iconbtn" type="button" id="slPrev" aria-label="Previous photo">← prev</button><span id="slideCount"></span><button class="iconbtn" type="button" id="slNext" aria-label="Next photo">next →</button></div><p class="galcap" id="galCap"></p>` : ""}
+      <span class="label">${esc(p.sub)}</span><h3>${esc(p.name)}</h3><p>${esc(p.blurb)}</p>
+      ${p.points ? `<ul class="points">${p.points.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
       <div class="cta">${p.link ? `<a class="btn primary" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.linkText || "View project")} ↗</a>` : ""}${p.link2 ? `<a class="btn" href="${esc(p.link2)}" target="_blank" rel="noopener">${esc(p.link2Text)} ↗</a>` : ""}</div>`;
+    show();
+    if (g.length) {
+      $("#slPrev").onclick = () => { n = (n + g.length - 1) % g.length; show(); };
+      $("#slNext").onclick = () => { n = (n + 1) % g.length; show(); };
+      modal.onkeydown = e => { if (e.key === "ArrowRight") $("#slNext").click(); if (e.key === "ArrowLeft") $("#slPrev").click(); };
+    } else modal.onkeydown = null;
   }
   modal.showModal();
 }
@@ -708,7 +753,7 @@ const COMMANDS = {
   ${cmdBtn("theme")}        dark/light          ${cmdBtn("clear")}      clear screen
   flag RA{...}  submit a flag
 <span class="d">Tip: ↑/↓ for history, Tab to autocomplete. Some commands are not listed.
-Commands marked "go" close the terminal and jump to that section: add --stay to keep it open.</span>`),
+Section commands close the terminal and jump to that part of the page. Add --stay to keep it open.</span>`),
   whoami: () => line(`<span class="g">raul</span> · Cybersecurity Analyst · Bay Area, CA
 10+ yrs servers, networks &amp; Linux. Pentesting, hardening, forensics.
 Co-founded CS-Academy and taught ethical hacking for 5 years.
@@ -781,5 +826,5 @@ line(`<span class="d">Last login: ${new Date().toDateString()} from 127.0.0.1</s
 line(`Welcome to <span class="g">raulalderete.com</span>. Click a command or type one.`);
 COMMANDS.help();
 </script>
-
-</body></html>
+</body>
+</html>
