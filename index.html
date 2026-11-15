@@ -501,7 +501,7 @@ const RESUME = {
     { name: "Business Analysis & Process Management", cat: "Other", issuer: "Coursera Project Network", date: "Feb 2025", id: "XT0VR9VJ8893", image: "images/certs/coursera-business-analysis.jpg" }
   ],
   certs: [
-    { name: "Certified Ethical Hacker (CEH)", short: "CEH", issuer: "EC-Council", year: "expected Nov 2026", status: "in progress", image: "images/certs/ec-council-ceh.png", verify: "" },
+    { name: "CompTIA CySA+", short: "CySA+", issuer: "CompTIA", year: "", status: "in progress", image: "images/certs/comptia-cysa-plus.webp", verify: "" },
     { name: "CompTIA Security+", short: "Security+", issuer: "CompTIA", year: "Nov 2026", status: "earned", note: "SY0-701 exam. Valid through Nov 2029.", image: "images/certs/comptia-security-plus.svg", certImg: "images/certs/comptia-security-plus-cert.jpg", code: "b9382f7936e74107962d4b8bde85c0c6", verify: "https://verify.comptia.org" },
     { name: "CompTIA Tech+", short: "Tech+", issuer: "CompTIA", year: "Oct 2026", status: "earned", image: "images/certs/comptia-tech-plus.svg", certImg: "images/certs/comptia-tech-plus-cert.jpg", code: "229e81d2f14246f9a210a0aa87ddec24", verify: "https://verify.comptia.org" },
     { name: "CompTIA AI Prompting", short: "AI Prompting", issuer: "CompTIA", year: "Oct 2026", status: "earned", id: "6-2C6-27JMCT", image: "images/certs/comptia-ai-prompting.jpg", verify: "" },
@@ -637,7 +637,7 @@ $("#trainNote").textContent = `${RESUME.training.length} courses · ${ceus} CEU/
 const thumb = (item, glyph) => `<span class="thumb">${item.image ? `<img src="${esc(item.image)}" alt="" loading="lazy">` : esc(glyph)}</span>`;
 $("#certList").innerHTML = RESUME.certs.map((c, i) => `
   <button class="thumbrow" type="button" data-kind="cert" data-i="${i}">${thumb(c, initials(c.short))}
-    <span><b>${esc(c.name)}</b><span>${esc(c.issuer)} · ${esc(c.year)} · <span class="${statusCls(c.status)}">${esc(c.status)}</span></span></span></button>`).join("");
+    <span><b>${esc(c.name)}</b><span>${esc(c.issuer)} · ${c.year ? esc(c.year) + " · " : ""}<span class="${statusCls(c.status)}">${esc(c.status)}</span></span></span></button>`).join("");
 $("#projList").innerHTML = RESUME.projects.map((p, i) => `
   <button class="thumbrow" type="button" data-kind="proj" data-i="${i}">${thumb(p, p.glyph)}
     <span><b>${esc(p.name)}${p.lang ? `<span class="lang">${esc(p.lang)}</span>` : ""}</b><span>${esc(p.sub)}</span></span></button>`).join("");
@@ -657,7 +657,7 @@ function openItem(kind, i) {
     const c = RESUME.certs[i];
     if (c.certImg) $("#mImg").style.aspectRatio = "1650 / 1275";
     $("#mImg").innerHTML = c.certImg ? `<img src="${esc(c.certImg)}" alt="${esc(c.name)} certificate">` : big(c, initials(c.short));
-    $("#mBody").innerHTML = `<span class="label">${esc(c.issuer)} · ${esc(c.year)}</span><h3>${esc(c.name)}</h3>
+    $("#mBody").innerHTML = `<span class="label">${esc(c.issuer)}${c.year ? " · " + esc(c.year) : ""}</span><h3>${esc(c.name)}</h3>
       <p class="${statusCls(c.status)}">● ${esc(c.status)}</p>${c.note ? `<p>${esc(c.note)}</p>` : ""}${c.id ? `<p class="mono-id">Certificate ID: ${esc(c.id)}</p>` : ""}
       ${c.code ? `<p class="mono-id">Verification code: ${esc(c.code)} <button class="iconbtn" type="button" id="copyCode">copy</button></p><p>To verify, open CompTIA's verification page and enter this code.</p>` : ""}
       ${c.verify ? `<a class="btn" href="${esc(c.verify)}" target="_blank" rel="noopener">Verify credential ↗</a>` : ""}`;
@@ -770,7 +770,7 @@ CRT monitor and that was it.
   github: () => line(`<span class="g">xcod3</span> · github.com/xcod3
 badges: <span class="o">❄ Arctic Code Vault Contributor</span> (2020 GitHub Archive Program)`),
   youtube: () => line(`youtube.com/@CSAcademyORG · Ethical Hacking and Linux courses, in Spanish`),
-  certs: s => { RESUME.certs.forEach(c => line(`${c.status === "earned" ? '<span class="g">[✓]</span>' : '<span class="o">[~]</span>'} ${esc(c.name)} <span class="d">(${esc(c.year)})</span>`)); s || go("certs"); },
+  certs: s => { RESUME.certs.forEach(c => line(`${c.status === "earned" ? '<span class="g">[✓]</span>' : '<span class="o">[~]</span>'} ${esc(c.name)} <span class="d">(${esc(c.year || c.status)})</span>`)); s || go("certs"); },
   projects: s => { RESUME.projects.forEach(p => line(`drwxr-x---  ${esc(p.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}/  <span class="d">${esc(p.sub)}</span>`)); s || go("projects"); },
   skills: s => { RESUME.skills.forEach(k => line(`<span class="o">${esc(k.area)}:</span> ${k.items.map(esc).join(", ")}`)); s || go("skills"); },
   contact: s => { RESUME.contact.forEach(c => line(`${esc(c.label.padEnd(12))}${esc(c.value)}`)); s || go("contact"); },
